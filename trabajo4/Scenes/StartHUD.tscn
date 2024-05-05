@@ -1,0 +1,77 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Assets/Themes/MainTheme.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Assets/Scripts/StartManager.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Sfx/circo/circo.mp3" type="AudioStream" id=3]
+
+[sub_resource type="Theme" id=1]
+default_font = ExtResource( 1 )
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.478431 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_top = -164.0
+margin_bottom = 140.0
+alignment = 1
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer"]
+margin_right = 1024.0
+margin_bottom = 98.0
+size_flags_vertical = 3
+alignment = 1
+
+[node name="TitleLabel" type="Label" parent="VBoxContainer/HBoxContainer3"]
+margin_left = 212.0
+margin_top = 40.0
+margin_right = 812.0
+margin_bottom = 58.0
+size_flags_stretch_ratio = 6.5
+theme = SubResource( 1 )
+text = "Llegá a la meta con RITMO"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 102.0
+margin_right = 1024.0
+margin_bottom = 201.0
+size_flags_vertical = 3
+alignment = 1
+
+[node name="ButtonEscuchar" type="Button" parent="VBoxContainer/HBoxContainer"]
+margin_left = 314.0
+margin_right = 710.0
+margin_bottom = 99.0
+custom_fonts/font = ExtResource( 1 )
+text = "Escuchar canción"
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 205.0
+margin_right = 1024.0
+margin_bottom = 304.0
+size_flags_vertical = 3
+alignment = 1
+
+[node name="ButtonJugar" type="Button" parent="VBoxContainer/HBoxContainer5"]
+margin_left = 446.0
+margin_right = 578.0
+margin_bottom = 99.0
+custom_fonts/font = ExtResource( 1 )
+text = "Jugar"
+
+[node name="Manager" type="Node" parent="."]
+script = ExtResource( 2 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/ButtonEscuchar" to="Manager" method="_on_ButtonEscuchar_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer5/ButtonJugar" to="Manager" method="_on_ButtonJugar_pressed"]

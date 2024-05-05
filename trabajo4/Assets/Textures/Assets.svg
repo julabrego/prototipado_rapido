@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   sodipodi:docname="Assets.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="0.75722503"
+     inkscape:cx="588.33238"
+     inkscape:cy="425.89717"
+     inkscape:window-width="1920"
+     inkscape:window-height="1009"
+     inkscape:window-x="1912"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2">
+    <pattern
+       inkscape:collect="always"
+       xlink:href="#Checkerboard"
+       id="pattern5183"
+       patternTransform="matrix(3.2842098,0,0,3.2842099,99.407643,73.332794)" />
+    <pattern
+       inkscape:collect="always"
+       patternUnits="userSpaceOnUse"
+       width="2"
+       height="2"
+       patternTransform="translate(0,0) scale(10,10)"
+       id="Checkerboard"
+       inkscape:stockid="Checkerboard">
+      <rect
+         style="fill:black;stroke:none"
+         x="0"
+         y="0"
+         width="1"
+         height="1"
+         id="rect3961" />
+      <rect
+         style="fill:black;stroke:none"
+         x="1"
+         y="1"
+         width="1"
+         height="1"
+         id="rect3963" />
+    </pattern>
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect1912"
+       is_visible="true"
+       lpeversion="1" />
+    <marker
+       style="overflow:visible;"
+       id="Arrow2Lend"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow2Lend"
+       inkscape:isstock="true">
+      <path
+         transform="scale(1.1) rotate(180) translate(1,0)"
+         d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z "
+         style="stroke:context-stroke;fill-rule:evenodd;fill:context-stroke;stroke-width:0.62500000;stroke-linejoin:round;"
+         id="path1565" />
+    </marker>
+    <marker
+       style="overflow:visible;"
+       id="Arrow1Lend"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lend"
+       inkscape:isstock="true">
+      <path
+         transform="scale(0.8) rotate(180) translate(12.5,0)"
+         style="fill-rule:evenodd;fill:context-stroke;stroke:context-stroke;stroke-width:1.0pt;"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         id="path1547" />
+    </marker>
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect1462"
+       is_visible="true"
+       lpeversion="1" />
+  </defs>
+  <g
+     inkscape:label="Capa 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       id="g1822"
+       transform="matrix(1.2898211,0,0,1.1819347,-15.623643,-14.491896)"
+       inkscape:export-filename="D:\gameDev\Godot\prototipado\trabajo4\Assets\Textures\arrowDown.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
+      <rect
+         style="fill:#ffffff;stroke:#000000;stroke-width:0.3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+         id="rect846"
+         width="7.9011703"
+         height="7.9011703"
+         x="55.492702"
+         y="73.468727"
+         inkscape:export-filename="D:\gameDev\Godot\prototipado\trabajo4\Assets\Textures\arrowDown.png"
+         inkscape:export-xdpi="90"
+         inkscape:export-ydpi="90" />
+      <path
+         style="fill:none;stroke:#000000;stroke-width:0.264583;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow2Lend)"
+         d="m 59.438626,74.73044 v 4.935442"
+         id="path1460"
+         inkscape:path-effect="#path-effect1462"
+         inkscape:original-d="m 59.438626,74.73044 c 2.65e-4,1.645412 2.65e-4,3.290559 0,4.935442" />
+    </g>
+    <g
+       id="g6686"
+       inkscape:export-filename="D:\gameDev\Godot\prototipado\trabajo4\Assets\Textures\Salida.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"
+       transform="matrix(2.0569561,0,0,2.0569561,-97.862351,-77.481771)">
+      <rect
+         style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.221057;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:1;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+         id="rect5634"
+         width="6.8234062"
+         height="23.004801"
+         x="92.588852"
+         y="73.306519"
+         inkscape:export-filename="D:\gameDev\Godot\prototipado\trabajo4\Assets\Textures\arrowDown.png"
+         inkscape:export-xdpi="90"
+         inkscape:export-ydpi="90"
+         inkscape:transform-center-x="-0.060860505"
+         inkscape:transform-center-y="0.35007027"
+         ry="0" />
+      <rect
+         style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.264583;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:1;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+         id="rect6042"
+         width="9.7935562"
+         height="22.961275"
+         x="99.390495"
+         y="73.328285"
+         inkscape:export-filename="D:\gameDev\Godot\prototipado\trabajo4\Assets\Textures\arrowDown.png"
+         inkscape:export-xdpi="90"
+         inkscape:export-ydpi="90"
+         inkscape:transform-center-x="-0.087352946"
+         inkscape:transform-center-y="0.34941173"
+         ry="0" />
+      <rect
+         style="fill:url(#pattern5183);fill-opacity:1;stroke:none;stroke-width:0;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:1;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+         id="rect1904"
+         width="9.7935562"
+         height="22.961275"
+         x="99.390495"
+         y="73.328285"
+         inkscape:export-filename="D:\gameDev\Godot\prototipado\trabajo4\Assets\Textures\arrowDown.png"
+         inkscape:export-xdpi="90"
+         inkscape:export-ydpi="90"
+         inkscape:transform-center-x="-0.087352946"
+         inkscape:transform-center-y="0.34941173"
+         ry="0" />
+      <text
+         xml:space="preserve"
+         style="font-size:7.39511px;line-height:1.25;font-family:sans-serif;fill:#ffffff;fill-opacity:1;stroke-width:0.154065;paint-order:markers stroke fill"
+         x="-96.001297"
+         y="98.667137"
+         id="text2632"
+         transform="rotate(-90)"><tspan
+           sodipodi:role="line"
+           id="tspan2630"
+           style="fill:#ffffff;fill-opacity:1;stroke-width:0.154065;paint-order:markers stroke fill"
+           x="-96.001297"
+           y="98.667137">Salida</tspan></text>
+    </g>
+    <g
+       id="g6698"
+       transform="matrix(-2.0569561,0,0,-2.0569561,371.43938,271.41467)"
+       inkscape:export-filename="D:\gameDev\Godot\prototipado\trabajo4\Assets\Textures\Llegada.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
+      <rect
+         style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.221057;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:1;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+         id="rect6688"
+         width="6.8234062"
+         height="23.004801"
+         x="92.588852"
+         y="73.306519"
+         inkscape:export-filename="D:\gameDev\Godot\prototipado\trabajo4\Assets\Textures\arrowDown.png"
+         inkscape:export-xdpi="90"
+         inkscape:export-ydpi="90"
+         inkscape:transform-center-x="-0.060860505"
+         inkscape:transform-center-y="0.35007027"
+         ry="0" />
+      <rect
+         style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.264583;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:1;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+         id="rect6690"
+         width="9.7935562"
+         height="22.961275"
+         x="99.390495"
+         y="73.328285"
+         inkscape:export-filename="D:\gameDev\Godot\prototipado\trabajo4\Assets\Textures\arrowDown.png"
+         inkscape:export-xdpi="90"
+         inkscape:export-ydpi="90"
+         inkscape:transform-center-x="-0.087352946"
+         inkscape:transform-center-y="0.34941173"
+         ry="0" />
+      <rect
+         style="fill:url(#pattern5183);fill-opacity:1;stroke:none;stroke-width:0;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:1;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+         id="rect6692"
+         width="9.7935562"
+         height="22.961275"
+         x="99.390495"
+         y="73.328285"
+         inkscape:export-filename="D:\gameDev\Godot\prototipado\trabajo4\Assets\Textures\arrowDown.png"
+         inkscape:export-xdpi="90"
+         inkscape:export-ydpi="90"
+         inkscape:transform-center-x="-0.087352946"
+         inkscape:transform-center-y="0.34941173"
+         ry="0" />
+      <text
+         xml:space="preserve"
+         style="font-size:5.64444px;line-height:1.25;font-family:sans-serif;fill:#ffffff;fill-opacity:1;stroke-width:0.154065;paint-order:markers stroke fill"
+         x="-96.001297"
+         y="97.531548"
+         id="text6696"
+         transform="rotate(-90)"><tspan
+           sodipodi:role="line"
+           id="tspan6694"
+           style="font-size:5.64444px;fill:#ffffff;fill-opacity:1;stroke-width:0.154065;paint-order:markers stroke fill"
+           x="-96.001297"
+           y="97.531548">Llegada</tspan></text>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/ritmo1.mp3-55b02e9e6f7d868b02ea0886a5797ee8.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sfx/ritmo1.mp3"
+dest_files=[ "res://.import/ritmo1.mp3-55b02e9e6f7d868b02ea0886a5797ee8.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

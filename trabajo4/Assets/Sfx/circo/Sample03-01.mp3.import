@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Sample03-01.mp3-5128faf3584be26abda06063a74932da.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sfx/circo/Sample03-01.mp3"
+dest_files=[ "res://.import/Sample03-01.mp3-5128faf3584be26abda06063a74932da.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
