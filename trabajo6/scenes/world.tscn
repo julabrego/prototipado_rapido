@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://gsocsipjnx1b"]
+
+[ext_resource type="Material" uid="uid://bi5rj0ld15ar7" path="res://assets/materials/placeholderTexture.tres" id="1_2d3rb"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_852fx"]
+size = Vector3(60, 2, 60)
+
+[sub_resource type="BoxMesh" id="BoxMesh_rdey4"]
+size = Vector3(60, 2, 60)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_74wb5"]
+size = Vector3(30, 7, 2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_xpvx2"]
+size = Vector3(30, 7, 2)
+
+[node name="World" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 9, 0)
+shadow_enabled = true
+
+[node name="Ground" type="StaticBody3D" parent="." groups=["Terrain"]]
+collision_layer = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
+shape = SubResource("BoxShape3D_852fx")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground"]
+mesh = SubResource("BoxMesh_rdey4")
+surface_material_override/0 = ExtResource("1_2d3rb")
+
+[node name="Wall1" type="StaticBody3D" parent="." groups=["Terrain"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.37318, 0)
+collision_layer = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall1"]
+shape = SubResource("BoxShape3D_74wb5")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Wall1"]
+mesh = SubResource("BoxMesh_xpvx2")
+surface_material_override/0 = ExtResource("1_2d3rb")

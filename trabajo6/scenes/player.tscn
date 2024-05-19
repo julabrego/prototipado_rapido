@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://8fe5fyflhl5u"]
+
+[ext_resource type="Texture2D" uid="uid://bvppfhgo2urgw" path="res://icon.svg" id="1_28eko"]
+[ext_resource type="Script" path="res://scenes/player.gd" id="1_rh2lv"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_eaaej"]
+size = Vector3(1.28, 1.28, 0.01)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_b7e8x"]
+size = Vector3(1.36, 1.36, 0.1)
+
+[node name="CharacterBody3D" type="CharacterBody3D"]
+collision_mask = 3
+script = ExtResource("1_rh2lv")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+texture = ExtResource("1_28eko")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_eaaej")
+
+[node name="ShapeCast3D" type="ShapeCast3D" parent="."]
+shape = SubResource("BoxShape3D_b7e8x")
+target_position = Vector3(0, 0, 0)
+
+[node name="Player" type="Node3D" parent="."]
