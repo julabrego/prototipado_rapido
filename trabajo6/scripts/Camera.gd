@@ -10,6 +10,6 @@ func _process(delta):
 		transform.origin = lerp(transform.origin, target.transform.origin - offset, smooth_speed * delta)
 
 		# Smoothly interpolate the camera's rotation to match the target's rotation
-		var target_rotation = target.transform.basis.get_rotation_quaternion()
-		var current_rotation = transform.basis.get_rotation_quaternion()
-		transform.basis = Basis(current_rotation.slerp(target_rotation, smooth_speed * delta))
+		#var target_rotation = target.transform.basis.get_rotation_quaternion()
+		#var current_rotation = transform.basis.get_rotation_quaternion()
+		#transform.basis = Basis(current_rotation.slerp(target_rotation, smooth_speed * delta))

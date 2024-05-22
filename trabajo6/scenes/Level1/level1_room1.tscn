@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://ds5vasaajfbjq"]
+[gd_scene load_steps=5 format=3 uid="uid://ds5vasaajfbjq"]
 
 [ext_resource type="PackedScene" uid="uid://8fe5fyflhl5u" path="res://scenes/player.tscn" id="1_8ndgx"]
 [ext_resource type="PackedScene" uid="uid://gsocsipjnx1b" path="res://scenes/world.tscn" id="2_wr358"]
-[ext_resource type="Script" path="res://scripts/Camera.gd" id="3_e277s"]
 [ext_resource type="Texture2D" uid="uid://bvppfhgo2urgw" path="res://icon.svg" id="4_rn2td"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_p1n0u"]
@@ -11,18 +10,17 @@ size = Vector3(1.24, 1.24, 0.145)
 [node name="Room1" type="Node3D"]
 
 [node name="Player" parent="." instance=ExtResource("1_8ndgx")]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 1.05753, 7)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 2, 5)
 
-[node name="World" parent="." instance=ExtResource("2_wr358")]
+[node name="CameraPivot" type="Node3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, -2)
 
-[node name="Camera3D" type="Camera3D" parent="." node_paths=PackedStringArray("target")]
+[node name="Camera3D" type="Camera3D" parent="Player/CameraPivot"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 11.1505, -2.84217e-14)
 projection = 1
 size = 7.19
-script = ExtResource("3_e277s")
-target = NodePath("../Player")
-offset = Vector3(0, -7, 0)
-smooth_speed = 5.0
+
+[node name="World" parent="." instance=ExtResource("2_wr358")]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.5, 0.866025, 0, -0.866025, 0.5, 0, 10, 10.4155)

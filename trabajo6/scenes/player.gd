@@ -7,11 +7,35 @@ extends CharacterBody3D
 const DOUBLETAP_DELAY = .25
 var doubletap_time = DOUBLETAP_DELAY
 var last_keycode:String = ""
+var is_rotating:bool = false
+var target_rotation
 
+func _ready():
+	target_rotation = rotation
 
 func _physics_process(delta):
 	doubletap_time -= delta
 	walk()
+	
+	if is_rotating:
+		if rotation.x > target_rotation.x:
+			rotation.x -= 0.02
+		elif rotation.x < target_rotation.x:
+			rotation.x += 0.02
+			
+		if rotation.y > target_rotation.y:
+			rotation.y -= 0.02
+		elif rotation.y < target_rotation.y:
+			rotation.y += 0.02
+			
+		if rotation.z > target_rotation.z:
+			rotation.z -= 0.02
+		elif rotation.z < target_rotation.z:
+			rotation.z += 0.02
+		
+		if abs(rotation.x) - abs(target_rotation.x) < 0.02 and abs(rotation.y) - abs(target_rotation.y) < 0.02 and abs(rotation.z) - abs(target_rotation.z) < 0.02:
+			rotation = target_rotation
+			is_rotating = false
 
 func handle_doubletap():
 	if Input.is_action_just_pressed("ui_up"):
@@ -80,6 +104,6 @@ func determine_wall_direction(collision_normal: Vector3) -> String:
 func on_wall_collision(collider, wall_direction: String):
 	var dash_direction = handle_doubletap()
 	if(dash_direction == wall_direction):
-		print(dash_direction, collider.get_rotation())
-		rotation = collider.get_rotation()
+		target_rotation = collider.get_rotation()
+		is_rotating = true
 	
