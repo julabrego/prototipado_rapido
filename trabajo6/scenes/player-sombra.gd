@@ -4,7 +4,8 @@ extends CharacterBody3D
 @export var wall_tag : String = "Terrain"  # Tag to identify wall objects
 
 func _physics_process(delta):
-	walk()
+	if $"../Controller".playing:
+		walk()
 
 func walk():
 	var direction = Vector3.ZERO
