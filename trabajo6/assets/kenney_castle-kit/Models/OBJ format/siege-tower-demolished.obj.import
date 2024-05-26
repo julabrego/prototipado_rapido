@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b8wra5uevb0es"
+path="res://.godot/imported/siege-tower-demolished.obj-33b03d3a2ee0e96a633a426f848cfaf6.mesh"
+
+[deps]
+
+files=["res://.godot/imported/siege-tower-demolished.obj-33b03d3a2ee0e96a633a426f848cfaf6.mesh"]
+
+source_file="res://assets/kenney_castle-kit/Models/OBJ format/siege-tower-demolished.obj"
+dest_files=["res://.godot/imported/siege-tower-demolished.obj-33b03d3a2ee0e96a633a426f848cfaf6.mesh", "res://.godot/imported/siege-tower-demolished.obj-33b03d3a2ee0e96a633a426f848cfaf6.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dpaay0urh40wu"
+path="res://.godot/imported/siege-ballista.obj-90f71599ba7b507b7811febb126b3f6e.mesh"
+
+[deps]
+
+files=["res://.godot/imported/siege-ballista.obj-90f71599ba7b507b7811febb126b3f6e.mesh"]
+
+source_file="res://assets/kenney_castle-kit/Models/OBJ format/siege-ballista.obj"
+dest_files=["res://.godot/imported/siege-ballista.obj-90f71599ba7b507b7811febb126b3f6e.mesh", "res://.godot/imported/siege-ballista.obj-90f71599ba7b507b7811febb126b3f6e.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

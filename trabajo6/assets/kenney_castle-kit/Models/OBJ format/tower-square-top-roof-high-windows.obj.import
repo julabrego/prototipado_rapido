@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://70ns3qr7hdei"
+path="res://.godot/imported/tower-square-top-roof-high-windows.obj-41a885054f0c6723bc0028e1efea658c.mesh"
+
+[deps]
+
+files=["res://.godot/imported/tower-square-top-roof-high-windows.obj-41a885054f0c6723bc0028e1efea658c.mesh"]
+
+source_file="res://assets/kenney_castle-kit/Models/OBJ format/tower-square-top-roof-high-windows.obj"
+dest_files=["res://.godot/imported/tower-square-top-roof-high-windows.obj-41a885054f0c6723bc0028e1efea658c.mesh", "res://.godot/imported/tower-square-top-roof-high-windows.obj-41a885054f0c6723bc0028e1efea658c.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

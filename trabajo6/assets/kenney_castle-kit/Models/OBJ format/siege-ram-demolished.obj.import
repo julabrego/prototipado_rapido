@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b0rw251nfneqb"
+path="res://.godot/imported/siege-ram-demolished.obj-9aa01dcd42c745a39074bb60c901cf12.mesh"
+
+[deps]
+
+files=["res://.godot/imported/siege-ram-demolished.obj-9aa01dcd42c745a39074bb60c901cf12.mesh"]
+
+source_file="res://assets/kenney_castle-kit/Models/OBJ format/siege-ram-demolished.obj"
+dest_files=["res://.godot/imported/siege-ram-demolished.obj-9aa01dcd42c745a39074bb60c901cf12.mesh", "res://.godot/imported/siege-ram-demolished.obj-9aa01dcd42c745a39074bb60c901cf12.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

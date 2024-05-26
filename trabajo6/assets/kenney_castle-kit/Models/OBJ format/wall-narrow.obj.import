@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cwpd2mmsyoua1"
+path="res://.godot/imported/wall-narrow.obj-c6797d4b56ec52b0598507113c2ddf3f.mesh"
+
+[deps]
+
+files=["res://.godot/imported/wall-narrow.obj-c6797d4b56ec52b0598507113c2ddf3f.mesh"]
+
+source_file="res://assets/kenney_castle-kit/Models/OBJ format/wall-narrow.obj"
+dest_files=["res://.godot/imported/wall-narrow.obj-c6797d4b56ec52b0598507113c2ddf3f.mesh", "res://.godot/imported/wall-narrow.obj-c6797d4b56ec52b0598507113c2ddf3f.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

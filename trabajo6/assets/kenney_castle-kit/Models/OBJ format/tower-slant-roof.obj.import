@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dn0praui8keuy"
+path="res://.godot/imported/tower-slant-roof.obj-5731c7e2332be157cda57df24b7586cf.mesh"
+
+[deps]
+
+files=["res://.godot/imported/tower-slant-roof.obj-5731c7e2332be157cda57df24b7586cf.mesh"]
+
+source_file="res://assets/kenney_castle-kit/Models/OBJ format/tower-slant-roof.obj"
+dest_files=["res://.godot/imported/tower-slant-roof.obj-5731c7e2332be157cda57df24b7586cf.mesh", "res://.godot/imported/tower-slant-roof.obj-5731c7e2332be157cda57df24b7586cf.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

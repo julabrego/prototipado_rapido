@@ -1,0 +1,38 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://rka45ltyn5w1"
+path.s3tc="res://.godot/imported/wall-narrow-wood-fence-17f4ae12c1d04defec681fc82a1fe594_colormap.png-8f06bf5612d27cdf87bf6b58d48e819b.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "5b3d5ba64d94fac3176b804d1a1d3433"
+}
+
+[deps]
+
+source_file="res://assets/kenney_castle-kit/Models/FBX format/wall-narrow-wood-fence-17f4ae12c1d04defec681fc82a1fe594_colormap.png"
+dest_files=["res://.godot/imported/wall-narrow-wood-fence-17f4ae12c1d04defec681fc82a1fe594_colormap.png-8f06bf5612d27cdf87bf6b58d48e819b.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

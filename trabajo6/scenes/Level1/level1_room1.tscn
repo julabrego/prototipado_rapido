@@ -10,14 +10,13 @@ size = Vector3(1.24, 1.24, 0.145)
 [node name="Room1" type="Node3D"]
 
 [node name="Player" parent="." instance=ExtResource("1_8ndgx")]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 2, 5)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 1.02532, 5)
 
 [node name="CameraPivot" type="Node3D" parent="Player"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, -2)
 
 [node name="Camera3D" type="Camera3D" parent="Player/CameraPivot"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 11.1505, -2.84217e-14)
-projection = 1
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 11.1505, 0)
 size = 7.19
 
 [node name="World" parent="." instance=ExtResource("2_wr358")]
