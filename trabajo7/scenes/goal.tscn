@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://cow8u6klcvl87"]
+
+[ext_resource type="Texture2D" uid="uid://cfi5qtnjpu206" path="res://assets/Sprite01.png" id="1_oy54p"]
+
+[node name="StaticBody2D" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(64.0387, 119.039)
+rotation = 0.785398
+texture = ExtResource("1_oy54p")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(151.039, 119.039)
+rotation = -0.785398
+texture = ExtResource("1_oy54p")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(2.03867, 0.0386658)
+polygon = PackedVector2Array(0, 0, 34, 0, 34, 148, 177, 148, 177, 0, 211, 0, 211, 181, 0, 181)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://buq5k5r1iy3mt"]
+[gd_scene load_steps=10 format=3 uid="uid://buq5k5r1iy3mt"]
 
 [ext_resource type="Script" path="res://scripts/Enemy.gd" id="1_n1xpi"]
 [ext_resource type="Texture2D" uid="uid://dld5ocjl1dgi" path="res://assets/Sprite02.png" id="2_7meqy"]
@@ -9,6 +9,79 @@ shader = ExtResource("2_ok5yp")
 shader_parameter/ORIGINAL_COLOR = Color(0, 0, 0, 1)
 shader_parameter/THRESHOLD = 0.3
 shader_parameter/NEW_COLOR = Color(0.8, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_7i5v4"]
+resource_name = "Blink"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_mqmoq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_8ooxp"]
+resource_name = "BlinkFast"
+length = 0.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_brmul"]
+resource_name = "Stopped"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_w08tk"]
+_data = {
+"Blink": SubResource("Animation_7i5v4"),
+"BlinkFast": SubResource("Animation_8ooxp"),
+"RESET": SubResource("Animation_mqmoq"),
+"Stopped": SubResource("Animation_brmul")
+}
 
 [node name="Enemy" type="CharacterBody2D"]
 script = ExtResource("1_n1xpi")
@@ -23,7 +96,24 @@ texture = ExtResource("2_7meqy")
 scale = Vector2(0.115826, 0.115826)
 polygon = PackedVector2Array(-5, 0, -145, -160, -135, -175, 335, -5, 325, 10, -145, 175, -150, 160)
 
-[node name="Timer" type="Timer" parent="."]
+[node name="FrontArea" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="FrontArea"]
+scale = Vector2(0.115826, 0.115826)
+polygon = PackedVector2Array(207.207, -51.8018, 336.712, -8.63364, 336.712, 8.63364, 207.207, 51.8018)
+
+[node name="ReverseTimer" type="Timer" parent="."]
 wait_time = 0.5
 
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[node name="DizzyTimer" type="Timer" parent="."]
+wait_time = 10.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_w08tk")
+}
+autoplay = "Stopped"
+
+[connection signal="body_entered" from="FrontArea" to="." method="_on_front_area_body_entered"]
+[connection signal="timeout" from="ReverseTimer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="DizzyTimer" to="." method="_on_dizzy_timer_timeout"]
