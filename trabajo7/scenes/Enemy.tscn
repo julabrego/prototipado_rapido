@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/Enemy.gd" id="1_n1xpi"]
 [ext_resource type="Texture2D" uid="uid://dld5ocjl1dgi" path="res://assets/Sprite02.png" id="2_7meqy"]
-[ext_resource type="Shader" path="res://shaders/enemy.gdshader" id="2_ok5yp"]
+[ext_resource type="Shader" path="res://shaders/change_color.gdshader" id="2_ok5yp"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qa23o"]
 shader = ExtResource("2_ok5yp")
@@ -24,6 +24,6 @@ scale = Vector2(0.115826, 0.115826)
 polygon = PackedVector2Array(-5, 0, -145, -160, -135, -175, 335, -5, 325, 10, -145, 175, -150, 160)
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 0.5
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

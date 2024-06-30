@@ -26,16 +26,14 @@ func _physics_process(delta):
 	calculate_steering(delta)
 	velocity += acceleration * delta
 	
-	if(go_reverse):
-		velocity *= -1
-	
 	var collision = move_and_collide(velocity * delta)
 	if collision:
 		velocity = velocity.bounce(collision.get_normal())
 		if collision.get_collider().is_in_group("wall"):
-			print('chocca')
-			go_reverse = true
-			$Timer.start()
+			if not go_reverse: 
+				$Timer.start()
+				
+			go_reverse = not go_reverse
 			
 	timer_label.text = var_to_str($Timer.time_left)
 	
@@ -56,11 +54,17 @@ func ai_chase_target(delta):
 		steer_direction = -deg_to_rad(steering_angle)
 	else:
 		steer_direction = angle_to_target
+		
+	if go_reverse:
+		steer_direction *= -1
 
 	var distance_to_target = position.distance_to(target.position)
 
 	if distance_to_target > 10:
-		acceleration = transform.x * engine_power
+		if(go_reverse):
+			acceleration = - transform.x * engine_power
+		else:
+			acceleration = transform.x * engine_power
 	else:
 		acceleration = Vector2.ZERO
 	
