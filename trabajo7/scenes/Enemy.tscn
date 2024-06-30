@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://buq5k5r1iy3mt"]
+
+[ext_resource type="Script" path="res://scripts/Enemy.gd" id="1_n1xpi"]
+[ext_resource type="Texture2D" uid="uid://dld5ocjl1dgi" path="res://assets/Sprite02.png" id="2_7meqy"]
+[ext_resource type="Shader" path="res://shaders/enemy.gdshader" id="2_ok5yp"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qa23o"]
+shader = ExtResource("2_ok5yp")
+shader_parameter/ORIGINAL_COLOR = Color(0, 0, 0, 1)
+shader_parameter/THRESHOLD = 0.3
+shader_parameter/NEW_COLOR = Color(0.8, 0, 0, 1)
+
+[node name="Enemy" type="CharacterBody2D"]
+script = ExtResource("1_n1xpi")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_qa23o")
+rotation = 2.36143
+scale = Vector2(0.115826, 0.115826)
+texture = ExtResource("2_7meqy")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+scale = Vector2(0.115826, 0.115826)
+polygon = PackedVector2Array(-5, 0, -145, -160, -135, -175, 335, -5, 325, 10, -145, 175, -150, 160)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

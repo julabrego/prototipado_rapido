@@ -1,0 +1,59 @@
+[gd_scene load_steps=7 format=3 uid="uid://dp8nbncb21dq4"]
+
+[ext_resource type="PackedScene" uid="uid://begimcyaug7tb" path="res://scenes/Player.tscn" id="1_ob2yp"]
+[ext_resource type="PackedScene" uid="uid://buq5k5r1iy3mt" path="res://scenes/Enemy.tscn" id="2_ilwoq"]
+
+[sub_resource type="Gradient" id="Gradient_b413r"]
+interpolation_mode = 2
+colors = PackedColorArray(0.572988, 0.572988, 0.572988, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_7mskl"]
+gradient = SubResource("Gradient_b413r")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_taxkq"]
+size = Vector2(45, 675)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xgy47"]
+size = Vector2(1210, 55)
+
+[node name="World" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(578.5, 324.875)
+scale = Vector2(4.50391, 650.25)
+texture = SubResource("GradientTexture1D_7mskl")
+
+[node name="Player" parent="." instance=ExtResource("1_ob2yp")]
+position = Vector2(545, 350)
+steering_angle = 20
+slip_speed = 1000
+
+[node name="Enemy" parent="." node_paths=PackedStringArray("target", "timer_label") instance=ExtResource("2_ilwoq")]
+position = Vector2(425, 350)
+target = NodePath("../Player")
+timer_label = NodePath("../Label")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." groups=["wall"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-20, 330)
+shape = SubResource("RectangleShape2D_taxkq")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1180, 327.5)
+shape = SubResource("RectangleShape2D_taxkq")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(585, -25)
+shape = SubResource("RectangleShape2D_xgy47")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(590, 680)
+shape = SubResource("RectangleShape2D_xgy47")
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 26
+text = "TImer"

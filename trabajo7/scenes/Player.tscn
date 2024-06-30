@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://begimcyaug7tb"]
+
+[ext_resource type="Texture2D" uid="uid://dld5ocjl1dgi" path="res://assets/Sprite02.png" id="1_3is5v"]
+[ext_resource type="Script" path="res://scripts/Player.gd" id="1_25rca"]
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_25rca")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 2.36143
+scale = Vector2(0.115826, 0.115826)
+texture = ExtResource("1_3is5v")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+scale = Vector2(0.115826, 0.115826)
+polygon = PackedVector2Array(-5, 0, -145, -160, -135, -175, 335, -5, 325, 10, -145, 175, -150, 160)
