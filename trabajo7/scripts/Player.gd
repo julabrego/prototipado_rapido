@@ -1,3 +1,4 @@
+class_name Player
 extends CharacterBody2D
 
 @export var wheel_base = 70
@@ -11,6 +12,8 @@ var aux_steering_angle
 @export var slip_speed = 400
 @export var traction_fast = 2.5
 @export var traction_slow = 10
+var aux_traction_slow
+@export var arrow_target: Node2D
 
 var acceleration = Vector2.ZERO
 var steer_direction
@@ -19,15 +22,22 @@ var bounce_velocity = Vector2.ZERO
 @export var bounce_decay = 0.5
 @export var bounce_strength_factor = 0.5
 
+var is_arrow_visible = true
+
+var can_move = true
+
 func _init():
 	aux_steering_angle = steering_angle
+	aux_traction_slow = traction_slow
 	
 func _physics_process(delta):
 	acceleration = Vector2.ZERO
-	get_input()
-	apply_friction(delta)
-	calculate_steering(delta)
-	velocity += acceleration * delta
+	
+	if can_move:
+		get_input()
+		apply_friction(delta)
+		calculate_steering(delta)
+		velocity += acceleration * delta
 	
 	if bounce_velocity.length() > 0.1:
 		bounce_velocity *= bounce_decay
@@ -39,12 +49,19 @@ func _physics_process(delta):
 	var collision = move_and_collide(velocity * delta)
 	if collision:
 		var collided = collision.get_collider()
-		velocity = velocity.bounce(collision.get_normal())
+		
+		if collided.is_in_group("wall"):
+			velocity = velocity.bounce(collision.get_normal())
 		
 		if collided.is_in_group('character'):
 			var bounce_speed = velocity.length()
 			var bounce_direction = (collided.position - position).normalized()
 			collided.apply_bounce(bounce_speed, bounce_direction)
+			
+			if not collided.is_dizzy: 
+				velocity = velocity.bounce(collision.get_normal())
+	
+	$Arrow.look_at(arrow_target.position)
 	
 func apply_friction(delta):
 	if acceleration == Vector2.ZERO and velocity.length() < 50:
@@ -61,9 +78,9 @@ func get_input():
 	if Input.is_action_pressed("ui_down"):
 		acceleration = transform.x * braking
 		
-	if Input.is_action_pressed("ui_accept"):
+	if Input.is_action_pressed("drift"):
 		drift()
-	elif Input.is_action_just_released("ui_accept"):
+	elif Input.is_action_just_released("drift"):
 		stop_drift()
 	
 func calculate_steering(delta):
@@ -84,11 +101,17 @@ func calculate_steering(delta):
 	rotation = new_heading.angle()
 
 func drift():
-	steering_angle = aux_steering_angle * 2
+	steering_angle = aux_steering_angle * 2.5
 	
 func stop_drift():
 	steering_angle = aux_steering_angle
 
+func show_arrow():
+	$Arrow.visible = true
+	
+func hide_arrow():
+	$Arrow.visible = false
+	
 func apply_bounce(speed, direction):
 	bounce_velocity = direction * speed * bounce_strength_factor
 

@@ -1,0 +1,160 @@
+[gd_scene load_steps=12 format=3 uid="uid://dp8nbncb21dq4"]
+
+[ext_resource type="Shader" path="res://shaders/change_color.gdshader" id="1_n1bmb"]
+[ext_resource type="PackedScene" uid="uid://begimcyaug7tb" path="res://scenes/Player.tscn" id="1_ob2yp"]
+[ext_resource type="Texture2D" uid="uid://cfi5qtnjpu206" path="res://assets/Sprite01.png" id="1_u8i1k"]
+[ext_resource type="Script" path="res://scenes/WorldController.gd" id="1_xd1sk"]
+[ext_resource type="PackedScene" uid="uid://buq5k5r1iy3mt" path="res://scenes/Enemy.tscn" id="2_ilwoq"]
+[ext_resource type="PackedScene" uid="uid://cow8u6klcvl87" path="res://scenes/goal.tscn" id="5_b3myk"]
+
+[sub_resource type="Gradient" id="Gradient_b413r"]
+colors = PackedColorArray(0.572988, 0.572988, 0.572988, 1, 0.450648, 0.450648, 0.450648, 1)
+metadata/_snap_enabled = true
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_7mskl"]
+gradient = SubResource("Gradient_b413r")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4d44v"]
+shader = ExtResource("1_n1bmb")
+shader_parameter/ORIGINAL_COLOR = Color(0.0705882, 0.0705882, 0.0705882, 1)
+shader_parameter/THRESHOLD = 0.3
+shader_parameter/NEW_COLOR = Color(0, 0.45098, 0.439216, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_taxkq"]
+size = Vector2(45, 1487.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xgy47"]
+size = Vector2(2420, 55)
+
+[node name="World" type="Node2D"]
+script = ExtResource("1_xd1sk")
+metadata/_edit_horizontal_guides_ = [740.0, 270.0, 1325.0]
+metadata/_edit_vertical_guides_ = [170.0, 2390.0]
+
+[node name="--MAP--" type="Node2D" parent="."]
+
+[node name="Background" type="Node2D" parent="--MAP--"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="--MAP--/Background"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="--MAP--/Background/ParallaxBackground"]
+
+[node name="BackgroundTexture" type="Sprite2D" parent="--MAP--/Background/ParallaxBackground/ParallaxLayer"]
+position = Vector2(1190, 722.375)
+scale = Vector2(9.375, 1445.25)
+texture = SubResource("GradientTexture1D_7mskl")
+
+[node name="TextureRect" type="TextureRect" parent="--MAP--/Background/ParallaxBackground/ParallaxLayer"]
+material = SubResource("ShaderMaterial_4d44v")
+offset_right = 12075.0
+offset_bottom = 7475.0
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_u8i1k")
+stretch_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="--MAP--/Background/ParallaxBackground/ParallaxLayer"]
+material = SubResource("ShaderMaterial_4d44v")
+offset_top = -9.0
+offset_right = 12075.0
+offset_bottom = 7841.0
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_u8i1k")
+stretch_mode = 1
+flip_v = true
+
+[node name="Borders" type="StaticBody2D" parent="--MAP--" groups=["wall"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="--MAP--/Borders"]
+position = Vector2(-30, 741.25)
+shape = SubResource("RectangleShape2D_taxkq")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="--MAP--/Borders"]
+position = Vector2(2410, 725)
+shape = SubResource("RectangleShape2D_taxkq")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="--MAP--/Borders"]
+position = Vector2(1190, -25)
+shape = SubResource("RectangleShape2D_xgy47")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="--MAP--/Borders"]
+position = Vector2(1200, 1470)
+shape = SubResource("RectangleShape2D_xgy47")
+
+[node name="Goal" parent="--MAP--" groups=["wall"] instance=ExtResource("5_b3myk")]
+position = Vector2(338, 177)
+rotation = 2.35619
+scale = Vector2(0.595939, 0.595939)
+
+[node name="Goal2" parent="--MAP--" groups=["wall"] instance=ExtResource("5_b3myk")]
+position = Vector2(245, 1160)
+rotation = 0.785397
+scale = Vector2(0.595939, 0.595939)
+
+[node name="Goal3" parent="--MAP--" groups=["wall"] instance=ExtResource("5_b3myk")]
+position = Vector2(2215, 270)
+rotation = -2.3562
+scale = Vector2(0.595939, 0.595939)
+
+[node name="Goal4" parent="--MAP--" groups=["wall"] instance=ExtResource("5_b3myk")]
+position = Vector2(2115, 1250)
+rotation = -0.785397
+scale = Vector2(0.595939, 0.595939)
+
+[node name="Player" parent="." groups=["character", "player"] instance=ExtResource("1_ob2yp")]
+position = Vector2(650, 736)
+steering_angle = 20
+max_speed_reverse = 400
+slip_speed = 1000
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(0.655, 0.655)
+limit_left = 0
+limit_top = 0
+limit_right = 2390
+limit_bottom = 1445
+limit_smoothed = true
+
+[node name="Enemy" parent="." node_paths=PackedStringArray("main_camera", "target", "reverse_timer_label", "blink_timer_label") groups=["character"] instance=ExtResource("2_ilwoq")]
+position = Vector2(1775, 736)
+rotation = -3.14159
+steering_angle = 30
+engine_power = 700
+main_camera = NodePath("../Player/Camera2D")
+target = NodePath("../Player")
+reverse_timer_label = NodePath("../CanvasLayer/VBoxContainer/ReverseTimerLabel")
+blink_timer_label = NodePath("../CanvasLayer/VBoxContainer/BlinkTimerLabel")
+
+[node name="--DEBUG--" type="Node2D" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+offset = Vector2(24, 24)
+transform = Transform2D(1, 0, 0, 1, 24, 24)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -17.0
+offset_top = -18.0
+offset_right = -17.0
+offset_bottom = -18.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ReverseTimerLabel" type="Label" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 26
+text = "TImer"
+
+[node name="BlinkTimerLabel" type="Label" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 26
+text = "TImer"
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0

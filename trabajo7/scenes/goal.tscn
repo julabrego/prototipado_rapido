@@ -1,8 +1,21 @@
-[gd_scene load_steps=2 format=3 uid="uid://cow8u6klcvl87"]
+[gd_scene load_steps=7 format=3 uid="uid://cow8u6klcvl87"]
 
+[ext_resource type="Script" path="res://scripts/Goal.gd" id="1_aivco"]
 [ext_resource type="Texture2D" uid="uid://cfi5qtnjpu206" path="res://assets/Sprite01.png" id="1_oy54p"]
+[ext_resource type="Shader" path="res://shaders/change_color.gdshader" id="3_7f2ss"]
+[ext_resource type="Texture2D" uid="uid://cy4btkui2p2b" path="res://assets/Sprite03.png" id="4_i227c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_coo33"]
+size = Vector2(162, 88)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_o4raq"]
+shader = ExtResource("3_7f2ss")
+shader_parameter/ORIGINAL_COLOR = Color(0, 0, 0, 1)
+shader_parameter/THRESHOLD = 0.3
+shader_parameter/NEW_COLOR = Color(0.8, 0, 0, 1)
 
 [node name="StaticBody2D" type="StaticBody2D"]
+script = ExtResource("1_aivco")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(64.0387, 119.039)
@@ -17,3 +30,31 @@ texture = ExtResource("1_oy54p")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 position = Vector2(2.03867, 0.0386658)
 polygon = PackedVector2Array(0, 0, 34, 0, 34, 148, 177, 148, 177, 0, 211, 0, 211, 181, 0, 181)
+
+[node name="Door" type="StaticBody2D" parent="."]
+position = Vector2(64, 61)
+rotation = 2.35619
+
+[node name="Sprite2D3" type="Sprite2D" parent="Door"]
+texture = ExtResource("1_oy54p")
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Door"]
+position = Vector2(-21.2132, -189.505)
+rotation = 0.785398
+polygon = PackedVector2Array(0, 0, 34, 0, 34, 148, 177, 148, 177, 0, 211, 0, 211, 181, 0, 181)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(108, 113)
+shape = SubResource("RectangleShape2D_coo33")
+
+[node name="Arrow" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_o4raq")
+position = Vector2(108, -97)
+rotation = 1.57079
+scale = Vector2(0.265, 0.265)
+texture = ExtResource("4_i227c")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
